@@ -12,7 +12,7 @@ export async function setSelection(selection: string) {
       throw new Error('There was an error when clicking on selection button: ' + err)
    }
 
-   redirect('/')
+   redirect('/?page=1')
 }
 
 export async function getSelection() {
