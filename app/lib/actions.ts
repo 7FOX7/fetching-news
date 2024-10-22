@@ -4,7 +4,6 @@ import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
 
 export async function setSelection(selection: string) {
-   console.log('still something to prove')
    try {
       const cookieStorage = await cookies(); 
       cookieStorage.set('selection', selection)
@@ -24,5 +23,16 @@ export async function getSelection() {
    }
    catch(err) {
       throw new Error('There was an error when getting the selection: ' + err)
+   }
+}
+
+export async function getData() {
+   try {
+      const res = await fetch('https://raw.githubusercontent.com/7FOX7/fetching-news-json/refs/heads/main/animals.json'); 
+      const data = await res.json();
+      return data
+   }
+   catch(err) {
+      throw new Error('There was an error when fetching the data: ' + err)
    }
 }
