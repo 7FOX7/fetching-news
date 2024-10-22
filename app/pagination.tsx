@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation"
 import { usePathname } from "next/navigation"
-import PageArrows from "./ui/PageArrows";
+import PageArrows from "./ui/page-arrows";
 
 export default function Pagination() {
    const searchParams = useSearchParams();

@@ -1,5 +1,5 @@
-import PageArrowLeft from "./PageArrowLeft"
-import PageArrowRight from "./PageArrowRight"
+import PageArrowLeft from "./page-arrow-left"
+import PageArrowRight from "./page-arrow-right"
 
 export default function PageArrows({
    prevPage, 
