@@ -23,7 +23,11 @@ export default function Images({
                   alt={page === 1 ? imgAlt1 : imgAlt2}
                   width={400}
                   height={200}
-                  layout="responsive"
+                  priority={true}
+                  style={{
+                     width: "400px", 
+                     height: "200px"
+                  }}
                />
             </div>
          </>
