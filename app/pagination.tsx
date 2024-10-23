@@ -6,7 +6,6 @@ import PageArrows from "./ui/page-arrows";
 
 export default function Pagination() {
    const searchParams = useSearchParams();
-   console.log('the original searchParams: ' + searchParams) 
    const pathname = usePathname(); 
    const currentPage = Number(searchParams.get('page')) || 1 
 
