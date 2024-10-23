@@ -8,7 +8,7 @@ export default async function Page() {
       redirect('/?page=1')
    }
    return (
-      <div className="w-full h-screen bg-purple-500 flex justify-center items-center">
+      <div className="w-full h-screen flex justify-center items-center">
          <SelectionButtons />
       </div>
    )

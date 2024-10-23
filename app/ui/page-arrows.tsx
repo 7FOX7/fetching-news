@@ -11,16 +11,16 @@ export default function PageArrows({
       leftArrowIsDisabled: boolean, 
       rightArrowIsDisabled: boolean
    }) {
-   return (
-      <div className="flex justify-center bg-blue-500">
-         <PageArrowLeft 
-            href={prevPage}
-            isDisabled={leftArrowIsDisabled}
-         />
-         <PageArrowRight
-            href={nextPage}
-            isDisabled={rightArrowIsDisabled}
-         />
-      </div>
-   )
+      return (
+         <div className="flex justify-center mt-8">
+            <PageArrowLeft 
+               href={prevPage}
+               isDisabled={leftArrowIsDisabled}
+            />
+            <PageArrowRight
+               href={nextPage}
+               isDisabled={rightArrowIsDisabled}
+            />
+         </div>
+      )
 }

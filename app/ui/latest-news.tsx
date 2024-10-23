@@ -10,18 +10,16 @@ export default function LatestNews({news}: {news: News}) {
    const endIndex = page === 1 ? 5 : news.length
    
    return (
-      <div className="bg-yellow-500">
-         <h2>Latest news</h2>
-         <div>
+      <article>
+         <h2 className="text-emerald-400 text-3xl font-semibold">Latest news</h2>
             {news.slice(startIndex, endIndex).map((_news, index) => {
                return (
-                  <div key={index} className="bg-orange-500">
-                     <h3>{_news.title}</h3>
+                  <div key={index} className="text-white mt-4">
+                     <h3 className="text-emerald-400 text-xl font-medium">{_news.title}</h3>
                      <p>{_news.content}</p>
                   </div>
                )
             })}
-         </div>
-      </div>
+      </article>
    )
 }
