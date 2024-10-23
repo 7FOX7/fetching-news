@@ -2,6 +2,7 @@
 
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
+import { AnimalData } from "./definitions";
 
 export async function setSelection(selection: string) {
    try {
@@ -24,6 +25,22 @@ export async function getSelection() {
    catch(err) {
       throw new Error('There was an error when getting the selection: ' + err)
    }
+}
+
+export async function getAnimalData() {
+   const [selection, data] = await Promise.all([
+      getSelection(), 
+      getData()
+   ])
+   .catch((err) => {
+      throw new Error('Promise failed when trying to resolve two async functions. More info: ' + err)
+   })
+
+   if(selection && data) {
+      const animalData: AnimalData = data[selection.value][0]
+      return animalData
+   }
+   redirect('/selection')
 }
 
 export async function getData() {
