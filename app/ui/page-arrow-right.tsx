@@ -10,6 +10,7 @@ export default function PageArrowRight({href, isDisabled}: {href: string, isDisa
                : 
                <Link
                   href={href}
+                  aria-label="Open next page"
                >
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6 md:size-9">
                      <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
