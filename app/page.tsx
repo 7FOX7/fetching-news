@@ -6,6 +6,7 @@ import { AnimalData } from "./lib/definitions"
 import Pagination from "./pagination"
 import Images from "./ui/images"
 import LatestNews from "./ui/latest-news"
+import InterestingFacts from "./ui/interesting-facts"
 
 export default async function Home() {
    const selection = await getSelection()
@@ -17,21 +18,18 @@ export default async function Home() {
    const animalData: AnimalData = data[selection.value][0]
 
    return (
-      <section className="w-full bg-red-500 grid grid-cols-1">
-         <div className="bg-blue-500 grid grid-cols-1 md:grid-cols-2">
+      <>
+         <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Images
-               image1={animalData.image1}
-               image2={animalData.image2}
+               imgSrc1={animalData.imgUrl1}
+               imgAlt1={animalData.imgAlt1}
+               imgSrc2={animalData.imgUrl2}
+               imgAlt2={animalData.imgAlt2}
             />
             <LatestNews news={animalData.news} />
-         </div>
-         <div>
-            <h2>Did you know...</h2>
-            <div>
-               <p>{animalData.description}</p>
-            </div>
-         </div>
+         </section>
+         <InterestingFacts fact={animalData.interestingFact} />
          <Pagination />
-      </section>
+      </>
    )
 }

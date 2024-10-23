@@ -1,7 +1,9 @@
 export type AnimalData = {
-   image1: string, 
-   image2: string, 
-   description: string, 
+   imgUrl1: string,
+   imgAlt1: string, 
+   imgUrl2: string,
+   imgAlt2: string,
+   interestingFact: string, 
    news: News
 }
 

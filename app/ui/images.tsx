@@ -3,19 +3,29 @@
 import Image from "next/image"
 import { useSearchParams } from "next/navigation"
 
-export default function Images({image1, image2}: {image1: string, image2: string}) {
-   const searchParams = useSearchParams()
-   const page = Number(searchParams.get('page')) || 1
-   return (
-      <>
-         <div className="bg-red-500">
-            <Image
-               src={page === 1 ? image1 : image2}
-               alt=""
-               width={15}
-               height={12}
-            />
-         </div>
-      </>
-   )
+export default function Images({
+   imgSrc1, 
+   imgAlt1, 
+   imgSrc2, 
+   imgAlt2}: {
+      imgSrc1: string,
+      imgAlt1: string
+      imgSrc2: string,
+      imgAlt2: string
+   }) {
+      const searchParams = useSearchParams()
+      const page = Number(searchParams.get('page')) || 1
+      return (
+         <>
+            <div>
+               <Image
+                  src={page === 1 ? imgSrc1 : imgSrc2}
+                  alt={page === 1 ? imgAlt1 : imgAlt2}
+                  width={400}
+                  height={200}
+                  layout="responsive"
+               />
+            </div>
+         </>
+      )
 }
